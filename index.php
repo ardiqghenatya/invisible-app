@@ -1,3 +1,6 @@
+<?php
+include('cek-login.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
