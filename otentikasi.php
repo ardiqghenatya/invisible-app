@@ -1,6 +1,6 @@
 
 <?php
-//include('../config/config.php');
+include('../config/config.php');
 session_start();
 
 
@@ -26,9 +26,23 @@ if (empty($username) && empty($password)) {
 	break;
 }
 
-$sql = ("select * from user where username='$username' and password='$password'");
+$servername = "localhost";
+$username = "invisible-app";
+$password = "invisible";
+$dbname = "invisible-app";
 
-if (mysql_num_rows($sql) == 1) {
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+     die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT username, password, id FROM user";
+$result = $conn->query($sql);
+
+if ($result->num_rows == 1) {
+
 	$_SESSION['username'] = $username;
 	header('location:index.php');
 } 
@@ -36,5 +50,6 @@ else {
 //if ($username ='admin' );	
 header('location:login.php?error=4');
 }
+mysql_close($conn)
 ?>  
  

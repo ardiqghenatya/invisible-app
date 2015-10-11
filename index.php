@@ -1,6 +1,6 @@
-//<?php
-//include('cek-login.php');
-//?>
+<?php
+include('cek-login.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +56,8 @@
 		<td>{{ item.Kode }}</td>
 		<td>{{ item.Harga }}</td>
 		<td>{{ item.Qty }}</td>
+    <a href="logout.php" <button class="md-raised md-warn md-button md-default-theme" ng-transclude="">
+      <span class="ng-scope">Log Out</span></button> </a>
 	  </tr>
     </tbody>
   </table>
