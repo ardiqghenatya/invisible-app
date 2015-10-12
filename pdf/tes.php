@@ -18,23 +18,21 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>username</th>
-					<th>password</th>
+					<th>Username</th>
+					<th>Password</th>
 				</tr>
 			</thead>
 			<tbody>
 			<?php
 				include "../config/config.php";
-				$sql = mysql_query("select * from user",$conn);
-				//$no = 1;
-				while($data = mysql_fetch_array($sql)){ ?>
+				$sql = "SELECT id, password, username FROM user";
+				$result = $conn->query($sql);
+				if ($result->num_rows > 0) 
+					while($row = $result->fetch_assoc()) { ?>
 					<tr>
-						<td><?php echo $no; ?></td>
-						<td><?php echo $data['id']; ?></td>
-						<td><?php echo $data['id']; ?></td>
-						<td><?php echo $data['username']; ?></td>
-						<td><?php echo $data[4]; ?></td>
-						<td><?php echo $data[5]; ?></td>
+						<td><?php echo $row["id"]; ?></td>
+						<td><?php echo $row["username"]; ?></td>
+						<td><?php echo $row["password"]; ?></td>
 					</tr>
 			<?php 
 				$no++;
