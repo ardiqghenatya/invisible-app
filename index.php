@@ -58,7 +58,10 @@ include('cek-login.php');
 		<td>{{ item.Qty }}</td>
     <a href="logout.php" <button class="md-raised md-warn md-button md-default-theme" ng-transclude="">
       <span class="ng-scope">Log Out</span></button> </a>
-	  </tr>
+	  <a href="../pdf/cetak.php" <button class="md-raised md-primary md-button md-default-theme" ng-transclude="">
+      <span class="ng-scope">Print</span><div style="" class="md-ripple-container">
+    </div></button> </a>
+    </tr>
     </tbody>
   </table>
 </div>

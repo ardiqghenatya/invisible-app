@@ -35,9 +35,9 @@
     $pdf->cell(50,6,$row["password"],1,0,'L',1);
    
     //$ya = $ya+$row;
-    $no++;
-    $i++;
-    $dm[id] = $row[0];
+    //$no++;
+    //$i++;
+    //$dm[id] = $row[0];
     }
     $pdf->text(150,$ya+6,"Regards , ". date('d-M-Y'));
     $pdf->text(150,$ya+20,"ARC Digital");
