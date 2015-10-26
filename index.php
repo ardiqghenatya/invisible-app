@@ -1,5 +1,5 @@
 <?php
-include('cek-login.php');
+include('login/cek-login.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,10 +56,13 @@ include('cek-login.php');
 		<td>{{ item.Kode }}</td>
 		<td>{{ item.Harga }}</td>
 		<td>{{ item.Qty }}</td>
-    <a href="logout.php" <button class="md-raised md-warn md-button md-default-theme" ng-transclude="">
+    <a href="login/logout.php" <button class="md-raised md-warn md-button md-default-theme" ng-transclude="">
       <span class="ng-scope">Log Out</span></button> </a>
 	  <a href="../pdf/cetak.php" <button class="md-raised md-primary md-button md-default-theme" ng-transclude="">
       <span class="ng-scope">Print</span><div style="" class="md-ripple-container">
+    </div></button> </a>
+    <a href="barcode/sbar.php" <button class="md-raised md-button md-ink-ripple" ng-transclude="">
+      <span class="ng-scope">Barcode</span><div style="" class="md-ripple-container">
     </div></button> </a>
     </tr>
     </tbody>

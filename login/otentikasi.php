@@ -22,7 +22,7 @@ if (empty($username) && empty($password)) {
 	break;
 } else if (empty($password)) {
 	
-	header('location:index.php');
+	header('location:login.php?error=3');
 	break;
 }
 
@@ -44,7 +44,7 @@ $result = $conn->query($sql);
 if ($result->num_rows == 1) {
 
 	$_SESSION['username'] = $username;
-	header('location:index.php');
+	header('location:../index.php');
 } 
 else {
 //if ($username ='admin' );	

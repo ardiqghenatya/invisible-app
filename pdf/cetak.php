@@ -1,7 +1,8 @@
 <?php
    include "../config/config.php";
    include "../pdf/fpdf/fpdf.php";
-   
+   //include "../barcode/barcode.php";
+   //include "../barcode/bars.php";
     $pdf = new FPDF();
     $pdf->Open();
     $pdf->addPage();
@@ -41,5 +42,9 @@
     }
     $pdf->text(150,$ya+6,"Regards , ". date('d-M-Y'));
     $pdf->text(150,$ya+20,"ARC Digital");
+    //$pdf->WriteHTML("This is a <img src='<img src="barcode.php?text='.$txt1.'" alt="testing">' test");
     $pdf->output();
+
+
+
     ?>

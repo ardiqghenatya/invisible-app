@@ -2,11 +2,10 @@
 session_start();
 
 if (!empty($_SESSION['username'])) {
-        header('location:index.php');
+  header('location:index.php');
 }
 ?>
 <!DOCTYPE html>
-
 
 <html lang="en">
   <head>
@@ -17,32 +16,17 @@ if (!empty($_SESSION['username'])) {
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="content/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../content/bootstrap/css/bootstrap.min.css">
 
 
     <!-- Custom styles for this template -->
-    <link href="content/bootstrap/css/signin.css" rel="stylesheet">
+    <link href="../content/bootstrap/css/signin.css" rel="stylesheet">
   </head>
 
   <body>
-<?php
-$servername = "localhost";
-$username = "invisible-app";
-$password = "invisible";
-$dbname = "invisible-app";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-} 
-?>  
-
-
-
+ 
 <?php 
-//kode php ini kita gunakan untuk menampilkan pesan eror
+
 if (!empty($_GET['error'])) {
   if ($_GET['error'] == 1) {
     echo '<div class="alert alert-danger" role="alert">Username dan Password belum terisi</div>';
@@ -51,7 +35,7 @@ if (!empty($_GET['error'])) {
   } else if ($_GET['error'] == 3) {
     echo '<div class="alert alert-danger" role="alert">Password belum terisi </div>';
   } else if ($_GET['error'] == 4) {
-    echo '<div class="alert alert-danger" role="alert">"(mysql_num_rows($sql)"</div>';
+    echo '<div class="alert alert-danger" role="alert">Username belum terdaftar</div>';
   }
 }
 ?>
@@ -68,7 +52,7 @@ if (!empty($_GET['error'])) {
           <label>
           </label>
         
-        <button class="btn btn-lg btn-primary btn-block"  type="submit" value="login" name="login">Login</button>
+        <button class="btn btn-lg btn-primary btn-block"  type="submit" value="login" name="Login">Login</button>
       </form>
 
     </div> <!-- /container -->
